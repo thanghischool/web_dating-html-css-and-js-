@@ -7,60 +7,102 @@
     <link rel="stylesheet" href="css/hompage/content.css">
     <link rel="stylesheet" href="css/hompage/footer.css">
     <link rel="stylesheet" href="css/hompage/header.css">
+    <link rel="stylesheet" href="css/hompage/register-form.css">
+    <link rel="stylesheet" href="css/hompage/login-form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="header">
-      <div class="logo">
-          <img src="img/Logo.png" alt="logo">
+    <div id="page">
+      <div class="header">
+        <div class="logo">
+            <img src="img/Logo.png" alt="logo">
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+          </ul>
+        </div>
+        <div class="menu2">
+          <li id="login-menu"><a href="#">Đăng nhập</a></li>
+        </div>
       </div>
-      <div class="menu">
-        <ul>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Liên hệ</a></li>
-          <li><a href="#">Giới thiệu</a></li>
-        </ul>
+
+      <div class="slider"></div>
+
+      <!-- from sign in to advice for dating -->
+      <div class="content">
+        <div class="register-btn" id="register-btn">
+          <span>Đăng ký</span>
+        </div>
+        <div class="started-bar">
+            <div class="image">
+              <img src="css/hompage/content/image 1.png" style="left: 50px; top: -60px; z-index: 3;">
+              <img src="css/hompage/content/image 2.png" style="left: 0px; top: -130px;">
+              <img src="css/hompage/content/image 3.png" style="left: 200px; top: -100px;">
+            </div>
+            <span>BẮT ĐẦU CÂU CHUYỆN TÌNH YÊU CỦA BẠN</span>
+            <div class="started-btn">
+              <span>Bắt Đầu</span>
+            </div>
+        </div>
+        <div class="title">
+          <p>TRANG HẸN HÒ ĐÁNG TIN CẬY</p>
+        </div>
       </div>
-      <div class="menu2">
-        <li><a href="#">Đăng nhập</a></li>
+      <div class="team-inf"></div>
+
+      <div class="footer">
+        <img src="img/Logo.png">
+        <nav>
+          <a href="#"><img src="css/hompage/footer/facebook.svg"></a>
+          <a href="#"><img src="css/hompage/footer/instagram.svg"></a>
+          <a href="#"><img src="css/hompage/footer/twitch.svg"></a>
+          <a href="#"><img src="css/hompage/footer/twitter.svg"></a>
+        </nav>
       </div>
     </div>
-
-    <div class="slider"></div>
-
-    <!-- from sign in to advice for dating -->
-    <div class="content">
-      <div class="register-btn">
-        <span>Đăng ký</span>
-      </div>
-      <div class="started-bar">
-          <div class="image">
-            <img src="css/hompage/content/image 1.png" style="left: 50px; top: -60px; z-index: 3;">
-            <img src="css/hompage/content/image 2.png" style="left: 0px; top: -130px;">
-            <img src="css/hompage/content/image 3.png" style="left: 200px; top: -100px;">
-          </div>
-          <span>BẮT ĐẦU CÂU CHUYỆN TÌNH YÊU CỦA BẠN</span>
-          <div class="started-btn">
-            <span>Bắt Đầu</span>
-          </div>
-      </div>
-      <div class="title">
-        <p>TRANG HẸN HÒ ĐÁNG TIN CẬY</p>
+    <div class="register-form" id="register-form">
+      <span class="title">Đăng Ký</span>
+      <label for="username">Email hoặc số điện thoại</label>
+      <input type="text" id="username">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password">
+      <label for="comfirm-password">Xác nhận</label>
+      <input type="password" id="confirm-password">
+      <div class="button">
+        <div class="register-btn">
+          <span>Đăng ký</span>
+        </div>
+        <div class="cancel-btn" id="cancel-btn-register">
+          <span>Hủy</span>
+        </div>
+        <script src="js/homepage/register-form.js"></script>
       </div>
     </div>
-
-    <div class="team-inf"></div>
-
-    <div class="footer">
-      <img src="img/Logo.png">
-      <nav>
-        <a href="#"><img src="css/hompage/footer/facebook.svg"></a>
-        <a href="#"><img src="css/hompage/footer/instagram.svg"></a>
-        <a href="#"><img src="css/hompage/footer/twitch.svg"></a>
-        <a href="#"><img src="css/hompage/footer/twitter.svg"></a>
-      </nav>
+    <div class="login-form" id="login-form">
+      <span class="title">Đăng nhập</span>
+      <label for="username">Tài khoản</label>
+      <input type="text" id="username">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password">
+      <a href="#">Quên mật khẩu</a>
+      <div class="button">
+        <div class="login-btn">
+          <span>Đăng nhập</span>
+        </div>
+        <div class="cancel-btn" id="cancel-btn-login">
+          <span>Hủy</span>
+        </div>
+        <script src="js/homepage/login-form.js"></script>
+      </div>
+      <div class="other-login">
+        <img src="css/hompage/img/google-logo.png">
+        <img src="css/hompage/img/facebook-logo.png">
+      </div>
     </div>
   </body>
 </html>

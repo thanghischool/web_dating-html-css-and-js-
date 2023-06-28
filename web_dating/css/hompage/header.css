@@ -12,6 +12,10 @@ html {
 :root {
   --button_form: rgba(237, 20, 125, 1);
 }
+#page{
+  width: 100%;
+  transition: 0.4s linear;
+}
 body{
   background-repeat: no-repeat;
   background: linear-gradient(180deg, #FF7EBD 0%, #FFF 33.33%);
