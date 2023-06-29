@@ -6,32 +6,33 @@
 
 html {
   /* font-family: ; */
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 :root {
   --button_form: rgba(237, 20, 125, 1);
 }
-#page{
+#page {
   width: 100%;
   transition: 0.4s linear;
 }
-body{
+body {
   background-repeat: no-repeat;
-  background: linear-gradient(180deg, #FF7EBD 0%, #FFF 33.33%);
+  background: linear-gradient(180deg, #ff7ebd 0%, #fff 33.33%);
   filter: blur(0px);
-  display: flex;
+  /* display: flex; */
   height: 2497px;
   padding: 10px 10px 0px 10px;
   flex-direction: column;
   align-items: center;
 }
-a{
-  text-decoration: none;
-  color: white;
+a {
+  text-decoration: none !important;
+  color: white !important;
 }
-.menu ul li a:hover, .menu2 li a:hover{
-  color: #ED147D;
+.menu ul li a:hover,
+.menu2 li a:hover {
+  color: #ed147d !important;
 }
 li {
   list-style: none;
@@ -48,11 +49,11 @@ li {
   gap: 10px;
   align-self: stretch;
 }
-.header .logo img{
+.header .logo img {
   width: 213px;
   height: 78px;
 }
-.header .menu{
+.header .menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +67,7 @@ li {
   gap: 92px;
   flex: 1 0 0;
 }
-.header .menu2{
+.header .menu2 {
   display: flex;
   width: 113px;
   height: 30px;
