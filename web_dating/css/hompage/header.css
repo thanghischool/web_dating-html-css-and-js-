@@ -5,7 +5,6 @@
 }
 
 html {
-  /* font-family: ; */
   font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -17,14 +16,7 @@ html {
   transition: 0.4s linear;
 }
 body {
-  background-repeat: no-repeat;
   background: linear-gradient(180deg, #ff7ebd 0%, #fff 33.33%);
-  filter: blur(0px);
-  /* display: flex; */
-  height: 2497px;
-  padding: 10px 10px 0px 10px;
-  flex-direction: column;
-  align-items: center;
 }
 #login-menu{
   width: fit-content!important;
@@ -51,32 +43,36 @@ li {
 .header {
   display: flex;
   height: 129px;
+  width: 100%;
   font-size: 25px;
   padding: 10px 0px;
   align-items: center;
   gap: 10px;
   align-self: stretch;
 }
+.header .logo{
+  min-width: 20%;
+}
 .header .logo img {
-  width: 213px;
-  height: 78px;
+  width: 100%;
 }
 .header .menu {
+  width: 60%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 0 0;
+  clip-path: 100;
 }
 .header .menu ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
   flex: 1 0 0;
+}
+.header .menu ul li{
+  margin: 0 50px 0 50px;
 }
 .header .menu2 {
   display: flex;
-  width: 140px;
+  width: 20%;
   height: 50px;
   justify-content: center;
   align-items: center;
