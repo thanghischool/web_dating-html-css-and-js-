@@ -34,7 +34,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  translate: -50% -100px;
 }
 
 .title-sign h1 {
