@@ -94,7 +94,7 @@
 .content .started-bar .started-btn span {
   display: flex;
   width: 231.62px;
-  height: 38px;
+  line-height: 64.556px;
   flex-direction: column;
   flex-shrink: 0;
   color: #ed147d;
