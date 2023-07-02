@@ -85,6 +85,11 @@
   right: 38.73px;
   cursor: pointer;
 }
+.content .started-bar .started-btn span{
+  text-align: center;
+  justify-content: center;
+  height: 100% !important;
+}
 .content .started-bar .started-btn:hover {
   border: 3px solid rgba(237, 20, 125, 0.8);
 }
