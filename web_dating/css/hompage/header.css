@@ -18,18 +18,25 @@ html {
 body {
   background: linear-gradient(180deg, #ff7ebd 0%, #fff 33.33%);
 }
-#login-menu{
-  width: fit-content!important;
+#login-menu {
+  width: fit-content !important;
 }
+
+#login-menu {
+  width: fit-content !important;
+}
+
 a {
   text-decoration: none !important;
   color: white !important;
 }
-.menu ul{
+
+.menu ul {
   display: flex !important;
   justify-content: center;
   margin: 0;
 }
+
 .menu ul li a:hover,
 .menu2 li a:hover {
   color: #ed147d !important;
@@ -50,7 +57,7 @@ li {
   gap: 10px;
   align-self: stretch;
 }
-.header .logo{
+.header .logo {
   min-width: 20%;
 }
 .header .logo img {
@@ -59,20 +66,24 @@ li {
 .header .menu {
   width: 60%;
   display: flex;
+
   clip-path: 100;
 }
 .header .menu ul {
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex: 1 0 0;
 }
-.header .menu ul li{
+.header .menu ul li {
   margin: 0 50px 0 50px;
 }
 .header .menu2 {
   display: flex;
+
   width: 20%;
+
   height: 50px;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,39 @@
+{
+  "personal": [
+    {
+      "id": 1,
+      "img_background": "./img/tai-hinh-nen-mien-phi-1024x576.jpg",
+      "img_avatar": "https://th.bing.com/th/id/R.5a02e6bf3f54dd8d39eb61a5687c39e9?rik=5hw8r9uCCniNNw&pid=ImgRaw&r=0"
+    }
+  ],
+  "description": [
+    {
+      "id": 1,
+      "name": "Phạm Thị Bích Thuỷ",
+      "character": "“Mình là người thích làm việc thiện, tốt tính và dễ chịu”",
+      "Address": "Đà Nẵng",
+      "Hoobies": "đọc sách, nghe nhạc, xem phim",
+      "Yearofbirth": 2000
+    }
+  ],
+
+  "picture": [
+    {
+      "id": 1,
+      "image": "./img/Anh-gai-xinh-Viet-Nam.jpg"
+    },
+
+    {
+      "id": 2,
+      "image": "./img/OIP (1).jpg"
+    },
+    {
+      "id": 3,
+      "image": "./img/OIP.jpg"
+    },
+    {
+      "id": 4,
+      "image": "./img/Hinh-anh-con-gai-cute-de-thuong (60).jpg"
+    }
+  ]
+}
