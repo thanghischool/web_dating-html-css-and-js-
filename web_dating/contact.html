@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/hompage/footer.css" />
     <link rel="stylesheet" href="css/hompage/header.css" />
     <link rel="stylesheet" href="css/hompage/slider.css" />
-    <link rel="stylesheet" href="css/contact/content.css">
-    <link rel="stylesheet" href="css/hompage/login-form.css">
+    <link rel="stylesheet" href="css/contact/content.css" />
+    <link rel="stylesheet" href="css/hompage/login-form.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <div id="page">
@@ -36,7 +36,7 @@
         <div class="menu">
           <ul>
             <li><a href="homepage.html">Trang chủ</a></li>
-            <li><a href="#" style="color: #ed147d!important">Liên hệ</a></li>
+            <li><a href="#" style="color: #ed147d !important">Liên hệ</a></li>
             <li><a href="#">Giới thiệu</a></li>
           </ul>
         </div>
@@ -126,38 +126,55 @@
       </div>
       <div class="cards">
         <div class="item">
-          <img src="img/VTC-image.png" alt="VTC">
+          <img src="img/VTC-image.png" alt="VTC" />
           <div class="content-item">
             <h4>Đà Nẵng</h4>
-            130 Điện Biên Phủ <br> Hotline: +84233223232 <br> Email: datingwithsomeone@company.vn
+            130 Điện Biên Phủ <br />
+            Hotline: +84233223232 <br />
+            Email: datingwithsomeone@company.vn
             <h4>Giờ làm việc</h4>
-            Open: 8:30 AM - Close: 9:00 PM <br>
+            Open: 8:30 AM - Close: 9:00 PM <br />
             Thứ hai - Thứ sáu hàng tuần
           </div>
         </div>
         <div class="item">
-          <img src="img/VTC-image.png" alt="VTC">
+          <img src="img/VTC-image.png" alt="VTC" />
           <div class="content-item">
             <h4>Đà Nẵng</h4>
-            130 Điện Biên Phủ <br> Hotline: +84233223232 <br> Email: datingwithsomeone@company.vn
+            130 Điện Biên Phủ <br />
+            Hotline: +84233223232 <br />
+            Email: datingwithsomeone@company.vn
             <h4>Giờ làm việc</h4>
-            Open: 8:30 AM - Close: 9:00 PM <br>
+            Open: 8:30 AM - Close: 9:00 PM <br />
             Thứ hai - Thứ sáu hàng tuần
           </div>
         </div>
         <div class="question-form">
           <h2>Bạn có câu hỏi gì cho chúng tôi không ?</h2>
-          <p>Địa chỉ email của bạn sẽ không công khai. Các ô bắt buộc phải nhập</p>
+          <p>
+            Địa chỉ email của bạn sẽ không công khai. Các ô bắt buộc phải nhập
+          </p>
           <div class="input-title">
-              <input type="text" name="name" id="name" placeholder="Tên" >
-              <input type="text" name="email" id="email" placeholder="Email">
-              <input type="text" name="subject" id="subject" placeholder="Tiêu đề">
+            <input type="text" name="name" id="name" placeholder="Tên" />
+            <input type="text" name="email" id="email" placeholder="Email" />
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Tiêu đề"
+            />
           </div>
           <div class="input-title">
-              <textarea name="message" id="message" cols="30" rows="10" placeholder="Tin nhắn"></textarea>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Tin nhắn"
+            ></textarea>
           </div>
           <div class="send-box">
-              <div class="send-btn">Gửi</div>
+            <div class="send-btn">Gửi</div>
           </div>
         </div>
       </div>
@@ -180,7 +197,7 @@
       <input type="password" id="password" />
       <a href="#">Quên mật khẩu</a>
       <div class="button">
-        <div class="login-btn">
+        <div class="login-btn" onclick="change_personal(event)">
           <span>Đăng nhập</span>
         </div>
         <div class="cancel-btn" id="cancel-btn-login">

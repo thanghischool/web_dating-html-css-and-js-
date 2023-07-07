@@ -29,7 +29,7 @@ fetch(pictureApi)
   })
   .then(function (data) {
     let showimgs = data.map(function (img) {
-      return `<div><img src="${img.image}" alt="" style="width: 100%; height: 495px"></img></div>`;
+      return `<div><img src="${img.image}" alt="" style="width: 100%; height: 495px; object-fit: cover"></img></div>`;
     });
 
     let showimg = showimgs.join("");
