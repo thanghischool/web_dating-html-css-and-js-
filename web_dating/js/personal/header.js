@@ -7,7 +7,7 @@ fetch(personalApi)
   .then(function (imgs) {
     console.log(imgs);
     var htmls = imgs.map(function (img) {
-      return `<img src="${img.img_avatar}" alt="" style="width: 50px; height: 50px; border-radius: 50%">`;
+      return `<img  src="${img.img_avatar}" alt="" style="width: 50px; height: 50px; border-radius: 50%">`;
     });
 
     var img_background = imgs.map(function (img_2) {

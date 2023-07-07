@@ -65,7 +65,10 @@
           name="search-input"
           id="search-input"
           placeholder="Tìm kiếm"
+          style="display: flex"
+          pattern="[a-zA-Z0-9]"
         />
+
         <div class="topic">
           <span>Chủ đề <i class="fa-light fa-chevron-down"></i></span>
         </div>
@@ -77,6 +80,8 @@
             >Giới tính <i class="fa-light fa-chevron-down"></i
           ></span>
         </div>
+        <div class="search-button" style="display: none">Tìm Kiếm</div>
+        <div class="cancel-btn" style="display: none">Hủy</div>
       </div>
       <div class="topic-form" style="display: none"></div>
       <div class="range-form" style="display: none">
@@ -92,21 +97,12 @@
           onresize="resize()"
         />
       </div>
-      <div class="gender-form" style="display: none">
-        <div class="male item" style="background: #fff" onclick="choosed(0)">
-          <img src="img/searching/male.png" alt="Nam" />
-          Nam
-        </div>
-        <div class="female item" style="background: #fff" onclick="choosed(1)">
-          <img src="img/searching/female.png" alt="Nữ" />
-          Nữ
-        </div>
-        <div class="other item" style="background: #fff" onclick="choosed(2)">
-          <img src="img/searching/LGBT.png" alt="Khác" />
-          Khác
-        </div>
-      </div>
-      <div class="button">Tìm Kiếm</div>
+      <div class="gender-form" style="display: none"></div>
+      <p style="font-size: 20px; margin: 20px; color: #9747ff">
+        *Lưu ý: công cụ có 2 lựa chọn là tìm người dùng theo tên và lọc người
+        dùng. Bạn không thể sử dụng 2 công cụ cùng lúc.
+      </p>
+
       <script src="js/searching/searching.js"></script>
       <div class="footer">
         <img src="img/Logo.png" />

@@ -1,82 +1,124 @@
 var data = [
-    {
-        id: 1,
-        name: 'Du lịch',
-        icon: 'img/searching/dulich.png'
-    },
-    {
-        id: 2,
-        name: 'Học tập',
-        icon: 'img/searching/hoctap.png'
-    },
-    {
-        id: 3,
-        name: 'Thức ăn',
-        icon: 'img/searching/thucan.png'
-    },
-    {
-        id: 4,
-        name: 'Tình cảm',
-        icon: 'img/searching/tinhcam.png'
-    },
-    {
-        id: 5,
-        name: 'Nghệ thuật',
-        icon: 'img/searching/nghethuat.png'
-    },
-    {
-        id: 6,
-        name: 'Công nghệ',
-        icon: 'img/searching/congnghe.png'
-    },
-    {
-        id: 7,
-        name: 'Làm đẹp',
-        icon: 'img/searching/lamdep.png'
-    },
-    {
-        id: 8,
-        name: 'Sáng tạo',
-        icon: 'img/searching/sangtao.png'
-    },
-    {
-        id: 9,
-        name: 'Trò chơi',
-        icon: 'img/searching/trochoi.png'
-    },
-    {
-        id: 10,
-        name: 'Kinh nghiệm',
-        icon: 'img/searching/kinhnghiem.png'
-    },
-    {
-        id: 11,
-        name: 'Công việc',
-        icon: 'img/searching/congviec.png'
-    },
-    {
-        id: 12,
-        name: 'Điện ảnh',
-        icon: 'img/searching/dienanh.png'
-    },
-    {
-        id: 13,
-        name: 'Sách',
-        icon: 'img/searching/sach.png'
-    },
-    {
-        id: 14,
-        name: 'Âm nhạc',
-        icon: 'img/searching/amnhac.png'
-    },
-    {
-        id: 15,
-        name: 'Thể thao',
-        icon: 'img/searching/thethao.png'
-    }
+        [{
+            id: 1,
+            name: 'Du lịch',
+            icon: 'img/searching/dulich.png',
+            checked: false
+        },
+        {
+            id: 2,
+            name: 'Học tập',
+            icon: 'img/searching/hoctap.png',
+            checked: false
+        },
+        {
+            id: 3,
+            name: 'Thức ăn',
+            icon: 'img/searching/thucan.png',
+            checked: false
+        },
+        {
+            id: 4,
+            name: 'Tình cảm',
+            icon: 'img/searching/tinhcam.png',
+            checked: false
+        },
+        {
+            id: 5,
+            name: 'Nghệ thuật',
+            icon: 'img/searching/nghethuat.png',
+            checked: false
+        },
+        {
+            id: 6,
+            name: 'Công nghệ',
+            icon: 'img/searching/congnghe.png',
+            checked: false
+        },
+        {
+            id: 7,
+            name: 'Làm đẹp',
+            icon: 'img/searching/lamdep.png',
+            checked: false
+        },
+        {
+            id: 8,
+            name: 'Sáng tạo',
+            icon: 'img/searching/sangtao.png',
+            checked: false
+        },
+        {
+            id: 9,
+            name: 'Trò chơi',
+            icon: 'img/searching/trochoi.png',
+            checked: false
+        },
+        {
+            id: 10,
+            name: 'Kinh nghiệm',
+            icon: 'img/searching/kinhnghiem.png',
+            checked: false
+        },
+        {
+            id: 11,
+            name: 'Công việc',
+            icon: 'img/searching/congviec.png',
+            checked: false
+        },
+        {
+            id: 12,
+            name: 'Điện ảnh',
+            icon: 'img/searching/dienanh.png',
+            checked: false
+        },
+        {
+            id: 13,
+            name: 'Sách',
+            icon: 'img/searching/sach.png',
+            checked: false
+        },
+        {
+            id: 14,
+            name: 'Âm nhạc',
+            icon: 'img/searching/amnhac.png',
+            checked: false
+        },
+        {
+            id: 15,
+            name: 'Thể thao',
+            icon: 'img/searching/thethao.png',
+            checked: false
+        }
+    ],
+    [
+        {
+            id: 1,
+            name: "Nam",
+            icon: 'img/searching/male.png',
+            checked: false
+        },
+        {
+            id: 2,
+            name: "Nữ",
+            icon: 'img/searching/female.png',
+            checked: false
+        },
+        {
+            id: 3,
+            name: "LGBT",
+            icon: 'img/searching/LGBT.png',
+            checked: false
+        }
+    ]
 ];
-
-
+function resetChecked(){
+    for (var i = 0; i < data.length; i++) {
+        data[i].forEach(function(value){
+            value.checked = false;
+        });
+    };
+}
+/////////////////////////////////////////////
 var valueRange = document.getElementById("value-range");
         var range = document.getElementById("range");
         range.addEventListener("input",function(e) {
@@ -104,6 +146,9 @@ var box3 = document.querySelector(".gender-form");
 var topic = document.querySelector(".topic");
 var gender = document.querySelector(".gender");
 var age = document.querySelector('.age');
+var input = document.querySelector('input[type="text"]');
+var cancel = document.querySelector(".cancel-btn");
+var searchbtn = document.querySelector(".search-button")
 /////////////////////////////
 function showRange(){
     box2.style.display = "block";
@@ -161,18 +206,67 @@ topic.addEventListener("click",function(e){
         up1.style.transform = "rotate(0deg)";
         }
 });
-var content = data.map(function(value){
-    return `<div class="item2" style="background: #FFF" onclick="checked(${value.id-1})">
-    <img src="${value.icon}">
-    ${value.name}
-  </div>`;
-}).join("");
-var topicForm = document.querySelector(".topic-form");
-topicForm.innerHTML = content;
-var item2s = document.getElementsByClassName("item2");
-function checked(value){
-    if (item2s[value].style.backgroundColor == "rgba(237, 20, 125, 0.8)"){
-        item2s[value].style.backgroundColor = "#FFF";
-    } else item2s[value].style.backgroundColor = "rgba(237, 20, 125, 0.8)";
+function loadData(){
+    var content = data[0].map(function(value){
+        return `<div class="item1" style="background: #FFF" data_id="${value.id}" onclick="checked(${value.id-1},0,'item1')">
+        <img src="${value.icon}">
+        ${value.name}
+    </div>`;
+    }).join("");
+    var topicForm = document.querySelector(".topic-form");
+    topicForm.innerHTML = content;
+    content = data[1].map(function(value){
+        return `<div class="item2" style="background: #FFF" data_id="${value.id}" onclick="checked(${value.id-1},1,'item2')">
+        <img src="${value.icon}">
+        ${value.name}
+    </div>`;
+    }).join("");
+    var genderForm = document.querySelector(".gender-form");
+    genderForm.innerHTML = content;
+}
+loadData();
+function checked(value,key,item){
+    var items = document.getElementsByClassName(item);
+    if (!(data[key][value].checked)){
+        items[value].style.backgroundColor = "rgba(237, 20, 125, 0.8)";
+        data[key][value].checked = true;
+    } else {
+        items[value].style.backgroundColor = "#FFF";
+        data[key][value].checked = false;
+    }
 }
 ///////////////////////////////////////
+topic.addEventListener("click",function(){
+    input.style.display = "none";
+    cancel.style.display = "flex";
+    searchbtn.style.display = "flex";
+});
+gender.addEventListener("click",function(){
+    input.style.display = "none";
+    cancel.style.display = "flex";
+    searchbtn.style.display = "flex";
+});
+age.addEventListener("click",function(){
+    input.style.display = "none";
+    cancel.style.display = "flex";
+    searchbtn.style.display = "flex";
+});
+///////////////////////////////////////
+function clear(){
+    resetChecked();
+    loadData();
+    range.value = 16;
+    thrumb.style.background = `linear-gradient(90deg, #ED147D 0px, rgb(214,214,214) 0%)`;
+    input.value="";
+    input.style.display = "flex";
+    cancel.style.display = "none";
+    searchbtn.style.display = "none";
+    box3.style.display = "none";
+    up3.style.transform = "rotate(0deg)";
+    box2.style.display = "none";
+    up2.style.transform = "rotate(0deg)";
+    box1.style.display = "none";
+    up1.style.transform = "rotate(0deg)";
+
+}
+cancel.addEventListener("click", clear);
