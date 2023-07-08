@@ -120,7 +120,7 @@ function resetChecked(){
 }
 /////////////////////////////////////////////
 var valueRange = document.getElementById("value-range");
-        var range = document.getElementById("range");
+var range = document.getElementById("range");
         range.addEventListener("input",function(e) {
             valueRange.innerHTML = range.value;
         });
@@ -148,7 +148,8 @@ var gender = document.querySelector(".gender");
 var age = document.querySelector('.age');
 var input = document.querySelector('input[type="text"]');
 var cancel = document.querySelector(".cancel-btn");
-var searchbtn = document.querySelector(".search-button")
+var searchbtn = document.querySelector(".search-button");
+var range = document.getElementById("range");
 /////////////////////////////
 function showRange(){
     box2.style.display = "block";
@@ -270,3 +271,128 @@ function clear(){
 
 }
 cancel.addEventListener("click", clear);
+///////////////////////////////////////////////////////
+var url = "http://localhost:3000/otherUser";
+var userinfos;
+fetch(url).then(function (response) {
+    return response.json();
+}).then(function (response){
+    userinfos = response;
+    var input = document.querySelector('input[type="text"]');
+    searchbtn.addEventListener("click", function(){
+        if (input.value !== ''){
+                document.querySelector('.display').style.display = 'none';
+                let arrayName = input.value.toLowerCase().split(" ");
+                let listUser = userinfos.filter(function (value){
+                    let names = value.name.toLowerCase().split(" ");
+                    let count = 0;
+                    for (let i = names.length-1; i >= 0; i--) {
+                        if (arrayName.includes(names[i])) count++;
+                        if (count == arrayName.length) return true;
+                    };
+                });
+                var render = listUser.map(function (value){
+                    var icon;
+                    if(value.gender == "Nữ") icon = "img/searching/female.png"; 
+                    else if(value.gender == "Nam") icon = "img/searching/male.png"; 
+                    else icon = "img/searching/LGBT.png";
+                    var hobbies_api = value.Hoobies;
+                    var count = 0;
+                    let text = [];
+                    for (let i = 0; i < data[0].length; i++) {
+                        if (count==4) break;
+                        if (hobbies_api.includes(data[0][i].name)){
+                            count++;
+                            text.push(`<div class="hobbie-item">
+                            <img src="${data[0][i].icon}">
+                            ${data[0][i].name}
+                            </div>`);
+                        }
+                    }
+                    return `
+                    <div class="user-card">
+                    <img src="${value.img_avatar}">
+                    <div class="overplay"></div>
+                    <div class="title">
+                        <h2 class="name">${value.name} <img src="${icon}"></h2>
+                        <p class="birthday">${value.Yearofbirth}</p>
+                    </div>
+                    <div class="hobbies">
+                    ${text.join('')}
+                    </div>
+                    </div>
+                    `
+                });
+                document.querySelector('.user-list').innerHTML = render.join('');
+        } else {
+                document.querySelector('.user-list').innerHTML = '';
+                let topics_checked = [];
+                for (let i = 0; i < data[0].length; i++) {
+                    if (data[0][i].checked) topics_checked.push(data[0][i].name);
+                }
+                let genders_checked = [];
+                for (let i = 0; i < data[1].length; i++) {
+                    if (data[1][i].checked) genders_checked.push(data[1][i].name);
+                }
+                let users_filtered = userinfos.filter(function(value){
+                    let counter = 0;
+                    value.Hoobies.forEach(function(hobbie){
+                        if (topics_checked.includes(hobbie))  counter++;
+                    });
+                    if (counter == topics_checked.length) return true;
+                });
+                users_filtered = users_filtered.filter(function(value){
+                    if (genders_checked.includes(value.gender)) return true;
+                    return false;
+                });
+                users_filtered = users_filtered.filter(function(value){
+                    if (range.value <= value.age) return true;
+                    return false;
+                });
+                let carousel_inner = document.querySelector('.carousel-inner');
+                carousel_inner.innerHTML = users_filtered.map(function(value){
+                    if (users_filtered[0].id === value.id) return  `<div class="carousel-item active">
+                    <img src="${value.img_avatar}" class="d-block">
+                </div>
+                    `; 
+                    else return `<div class="carousel-item">
+                    <img src="${value.img_avatar}" class="d-block">
+                </div>`;
+                }).join('');
+                var demo = document.querySelector('.display');
+                if (users_filtered.length > 0) {
+                    demo.style = 'display: block !important';
+                } else demo.style = 'display: none !important';
+                let body = document.querySelector('.body');
+                let showInfo = document.getElementById('showInfo');
+                let dem = 0;
+                showInfo.setAttribute('index', dem);
+                let prev = document.querySelector('.carousel-control-prev');
+                let next = document.querySelector('.carousel-control-next');
+                prev.addEventListener("click",function(){
+                    dem = (dem - 1 + users_filtered.length) % users_filtered.length;
+                    showInfo.setAttribute('index', dem);
+                    body.style.height = '0px';
+                })
+                next.addEventListener("click",function(){
+                    dem = (dem + 1 + users_filtered.length) % users_filtered.length;
+                    showInfo.setAttribute('index', dem);
+                    body.style.height = '0px';
+                })
+                showInfo.addEventListener('click', function(e){
+                    let index = showInfo.getAttribute('index');
+                    body.style.display = 'block'
+                    body.style.height = '250px';
+                    document.querySelector('.body').innerHTML = `<h1 class="fullname">${users_filtered[index].name}</h1>
+                    <p class="description">"${users_filtered[index].character}"</p>
+                    <p class="address">Sống tại ${users_filtered[index].Address}</p>
+                    <p class="hobbie">Sở thích là ${users_filtered[index].Hoobies.join(', ')}</p>
+                    <p class="yearofbirth">Sinh năm ${users_filtered[index].Yearofbirth}</p>
+                    `;
+                });
+            }
+        });
+});
+//////////////////////////////////
+
+
