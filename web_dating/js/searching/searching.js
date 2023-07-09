@@ -113,7 +113,6 @@ var data = [
   ],
 ];
 
-var otherUserApi = "http://localhost:3000/otherUser";
 function resetChecked() {
   for (var i = 0; i < data.length; i++) {
     data[i].forEach(function (value) {
@@ -121,11 +120,23 @@ function resetChecked() {
     });
   }
 }
-/////////////////////////////////////////////
+
 var valueRange = document.getElementById("value-range");
 var range = document.getElementById("range");
+
 range.addEventListener("input", function (e) {
   valueRange.innerHTML = range.value;
+});
+range.addEventListener("change", function (e) {
+  valueRange.innerHTML = range.value;
+});
+var thrumb = document.querySelector(".range-form #range");
+thrumb.addEventListener("input", function (e) {
+  var v = thrumb.clientWidth / (thrumb.max - thrumb.min);
+  thrumb.style.background = `linear-gradient(90deg, #ED147D ${
+    v.toFixed(6) * (thrumb.value - thrumb.min) +
+    (10 * (thrumb.max - thrumb.value - (thrumb.value - thrumb.min))) / 34
+  }px, rgb(214,214,214) 0%)`;
 });
 range.addEventListener("change", function (e) {
   valueRange.innerHTML = range.value;
@@ -145,7 +156,7 @@ window.onresize = function () {
     (10 * (thrumb.max - thrumb.value - (thrumb.value - thrumb.min))) / 34
   }px, rgb(214,214,214) 0%)`;
 };
-//////////////////////////////////////////////////////////////////
+
 var up1 = document.querySelector(".topic span i");
 var up2 = document.querySelector(".age span i");
 var up3 = document.querySelector(".gender span i");
@@ -158,7 +169,9 @@ var age = document.querySelector(".age");
 var input = document.querySelector('input[type="text"]');
 var cancel = document.querySelector(".cancel-btn");
 var searchbtn = document.querySelector(".search-button");
-/////////////////////////////
+
+var range = document.getElementById("range");
+
 function showRange() {
   box2.style.display = "block";
 }
@@ -175,7 +188,7 @@ age.addEventListener("click", function (e) {
     up2.style.transform = "rotate(0deg)";
   }
 });
-////////////////////////////
+
 function showGender() {
   box3.style.display = "inline-flex";
 }
@@ -241,6 +254,7 @@ function loadData() {
   var genderForm = document.querySelector(".gender-form");
   genderForm.innerHTML = content;
 }
+
 loadData();
 function checked(value, key, item) {
   var items = document.getElementsByClassName(item);
@@ -252,7 +266,7 @@ function checked(value, key, item) {
     data[key][value].checked = false;
   }
 }
-///////////////////////////////////////
+
 topic.addEventListener("click", function () {
   input.style.display = "none";
   cancel.style.display = "flex";
@@ -268,7 +282,7 @@ age.addEventListener("click", function () {
   cancel.style.display = "flex";
   searchbtn.style.display = "flex";
 });
-///////////////////////////////////////
+
 function clear() {
   resetChecked();
   loadData();
@@ -287,60 +301,144 @@ function clear() {
 }
 cancel.addEventListener("click", clear);
 
-fetch(otherUserApi)
+var url = "http://localhost:3000/otherUser";
+var userinfos;
+fetch(url)
   .then(function (response) {
     return response.json();
   })
-
-  .then(function (data) {
-    let inputUser = document.querySelector(".input #search-input");
-    let showUser = document.querySelector(".showUsers");
-    let search = document.querySelector(".search-button");
-    let inputValue;
-    inputUser.oninput = function (e) {
-      inputValue = e.target.value;
-      let userSearch = data.filter(function (user) {
-        return user.name.toLowerCase() == inputValue.toLowerCase();
-      });
-
-      search.addEventListener("click", function () {
-        if (userSearch.length !== 0) {
-          for (let i in userSearch) {
-            showUser.innerHTML = `<div class="sub-showUser" style = "width: 524px; border-radius: 20px; text-align: center; box-shadow: 4px 4px 38px 0px rgba(0, 0, 0, 0.25); margin-left: 10%; padding-bottom: 2%">
-              <img class="card-img-top" src="${userSearch[i].img_avatar}" alt="Ảnh user" style="border-radius: 20px 20px">
-              <p style = "font-size: 60px">${userSearch[i].name}</p>
-              <p style = "font-size: 40px">${userSearch[i].Yearofbirth}</p>
-              <div style = "display: inline-block; margin: 0 auto"> 
-              <p style="width: 127px; height: 37px; display: inline-block; border: 1px solid #9747FF; border-radius: 50px">${userSearch[i].Hoobies[0]}</p>
-              <p style="width: 127px; height: 37px; display: inline-block; border: 1px solid #9747FF; border-radius: 50px">${userSearch[i].Hoobies[1]}</p>
-              </div>
-
-
-              <p style="width: 127px; height: 37px; margin-left: 50%; translate: -50% 0 0; border: 1px solid #9747FF; border-radius: 50px">${userSearch[i].Hoobies[2]}</p>
-              
-              </div>`;
+  .then(function (response) {
+    userinfos = response;
+    var input = document.querySelector('input[type="text"]');
+    searchbtn.addEventListener("click", function () {
+      if (input.value !== "") {
+        document.querySelector(".display").style.display = "none";
+        let arrayName = input.value.toLowerCase().split(" ");
+        let listUser = userinfos.filter(function (value) {
+          let names = value.name.toLowerCase().split(" ");
+          let count = 0;
+          for (let i = names.length - 1; i >= 0; i--) {
+            if (arrayName.includes(names[i])) count++;
+            if (count == arrayName.length) return true;
           }
-        } else {
-          showUser.innerHTML = `<div class="message" style="text-align: center"><h1>Không tìm thấy dữ liệu</h1></div>`;
+        });
+        var render = listUser.map(function (value) {
+          var icon;
+          if (value.gender == "Nữ") icon = "img/searching/female.png";
+          else if (value.gender == "Nam") icon = "img/searching/male.png";
+          else icon = "img/searching/LGBT.png";
+          var hobbies_api = value.Hoobies;
+          var count = 0;
+          let text = [];
+          for (let i = 0; i < data[0].length; i++) {
+            if (count == 4) break;
+            if (hobbies_api.includes(data[0][i].name)) {
+              count++;
+              text.push(`<div class="hobbie-item">
+                            <img src="${data[0][i].icon}">
+                            ${data[0][i].name}
+                            </div>`);
+            }
+          }
+          return `
+                    <div class="user-card">
+                    <img src="${value.img_avatar}">
+                    <div class="overplay"></div>
+                    <div class="title">
+                        <h2 class="name">${value.name} <img src="${icon}"></h2>
+                        <p class="birthday">${value.Yearofbirth}</p>
+                    </div>
+                    <div class="hobbies">
+                    ${text.join("")}
+                    </div>
+                    </div>
+                    `;
+        });
+        document.querySelector(".user-list").innerHTML = render.join("");
+      } else {
+        document.querySelector(".user-list").innerHTML = "";
+        let topics_checked = [];
+        for (let i = 0; i < data[0].length; i++) {
+          if (data[0][i].checked) topics_checked.push(data[0][i].name);
         }
-      });
-    };
-  })
-
-  .catch(function (err) {
-    console.log(err);
-    alert("Lỗi dữ liệu");
+        let genders_checked = [];
+        for (let i = 0; i < data[1].length; i++) {
+          if (data[1][i].checked) genders_checked.push(data[1][i].name);
+        }
+        let users_filtered = userinfos.filter(function (value) {
+          let counter = 0;
+          value.Hoobies.forEach(function (hobbie) {
+            if (topics_checked.includes(hobbie)) counter++;
+          });
+          if (counter == topics_checked.length) return true;
+        });
+        users_filtered = users_filtered.filter(function (value) {
+          if (genders_checked.includes(value.gender)) return true;
+          return false;
+        });
+        users_filtered = users_filtered.filter(function (value) {
+          if (range.value <= value.age) return true;
+          return false;
+        });
+        let carousel_inner = document.querySelector(".carousel-inner");
+        carousel_inner.innerHTML = users_filtered
+          .map(function (value) {
+            if (users_filtered[0].id === value.id)
+              return `<div class="carousel-item active">
+                    <img src="${value.img_avatar}" class="d-block">
+                </div>
+                    `;
+            else
+              return `<div class="carousel-item">
+                    <img src="${value.img_avatar}" class="d-block">
+                </div>`;
+          })
+          .join("");
+        var demo = document.querySelector(".display");
+        if (users_filtered.length > 0) {
+          demo.style = "display: block !important";
+        } else demo.style = "display: none !important";
+        let body = document.querySelector(".body");
+        let showInfo = document.getElementById("showInfo");
+        let dem = 0;
+        showInfo.setAttribute("index", dem);
+        let prev = document.querySelector(".carousel-control-prev");
+        let next = document.querySelector(".carousel-control-next");
+        prev.addEventListener("click", function () {
+          dem = (dem - 1 + users_filtered.length) % users_filtered.length;
+          showInfo.setAttribute("index", dem);
+          body.style.height = "0px";
+        });
+        next.addEventListener("click", function () {
+          dem = (dem + 1 + users_filtered.length) % users_filtered.length;
+          showInfo.setAttribute("index", dem);
+          body.style.height = "0px";
+        });
+        showInfo.addEventListener("click", function (e) {
+          let index = showInfo.getAttribute("index");
+          body.style.display = "block";
+          body.style.height = "250px";
+          document.querySelector(".body").innerHTML = `<h1 class="fullname">${
+            users_filtered[index].name
+          }</h1>
+                    <p class="description">"${
+                      users_filtered[index].character
+                    }"</p>
+                    <p class="address">Sống tại ${
+                      users_filtered[index].Address
+                    }</p>
+                    <p class="hobbie">Sở thích là ${users_filtered[
+                      index
+                    ].Hoobies.join(", ")}</p>
+                    <p class="yearofbirth">Sinh năm ${
+                      users_filtered[index].Yearofbirth
+                    }</p>
+                    `;
+        });
+      }
+    });
   });
 
-cancel.onclick = function () {
-  let messageElement = document.querySelector(".message");
-  let subShowUserElement = document.querySelector(".sub-showUser");
-
-  if (messageElement) {
-    messageElement.remove();
-  }
-
-  if (subShowUserElement) {
-    subShowUserElement.remove();
-  }
-};
+function toggleAnimation(element) {
+  element.classList.toggle("animate");
+}

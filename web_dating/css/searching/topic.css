@@ -13,6 +13,7 @@
     background: #FFF;
     position: absolute;
     flex-wrap: wrap;
+    z-index: 2;
 }
 .topic-form > div{
     width: 25%;
@@ -24,4 +25,5 @@
     gap: 24px;
     border-radius: 50px;
     border: 1px solid #9747FF;
+    z-index: 2;
 }

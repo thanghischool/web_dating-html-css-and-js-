@@ -12,6 +12,7 @@
     border: 1px solid #9747FF;
     background: #FFF;
     position: absolute;
+    z-index: 2;
 }
 .gender-form > div{
     width: 25%;
@@ -23,4 +24,5 @@
     gap: 24px;
     border-radius: 50px;
     border: 1px solid #9747FF;
+    z-index: 2;
 }

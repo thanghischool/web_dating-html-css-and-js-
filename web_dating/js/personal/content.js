@@ -8,10 +8,17 @@ fetch(descriptionApi)
 
   .then(function (data) {
     let shows = data.map(function (describe) {
-      return `<h1>${describe.name} <span style="color: rgba(74, 157, 82, 1)">${describe.character}</span></h1>
-      <h1>Sống tại ${describe.Address}</h1>
-      <h1>Sở thích: ${describe.Hoobies}</h1>
-      <h1>Sinh năm: ${describe.Yearofbirth}</h1>`;
+      return `<h1 id="name">${describe.name} <span style="color: rgba(74, 157, 82, 1)">${describe.character}</span></h1>
+      <i class="bi bi-pencil-square" onclick="edit('name', ${describe.id})"></i>
+      
+      <h1 id="Address">Sống tại ${describe.Address}</h1>
+      <i class="bi bi-pencil-square" onclick="edit('Address',  ${describe.id})"></i>
+      
+      <h1 id="Hoobies">Sở thích: ${describe.Hoobies}</h1>
+      <i class="bi bi-pencil-square" onclick="edit('Hoobies',  ${describe.id})"></i>
+      
+      <h1 id="Yearofbirth">Sinh năm: ${describe.Yearofbirth}</h1>
+      <i class="bi bi-pencil-square" onclick="edit('Yearofbirth',  ${describe.id})"></i>`;
     });
 
     var show = shows.join("");
@@ -71,7 +78,7 @@ function change_selection_introduce(event) {
   document.querySelector(".inf-2 a").style.color = "rgba(0, 0, 0, 1)";
 
   document.querySelector(".depend-inf-2").style.display = "none";
-  document.querySelector(".depend-inf-1").style.display = "block";
+  document.querySelector(".depend-inf-1").style.display = "grid";
 }
 
 var image_click = document.querySelector(".inf-2");
@@ -79,3 +86,49 @@ image_click.addEventListener("click", change_selection_img);
 
 let introduce_click = document.querySelector(".inf-1");
 introduce_click.addEventListener("click", change_selection_introduce);
+
+let inputCreated = false;
+function edit(elementId, id) {
+  if (!inputCreated) {
+    let element = document.getElementById(elementId);
+    let input = document.createElement("input");
+    input.value = element.textContent;
+
+    element.style.display = "none";
+    element.parentNode.insertBefore(input, element.nextSibling);
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        updateData(elementId, input.value, id);
+      }
+    });
+    inputCreated = true;
+  }
+}
+
+function updateData(elementId, newValue, id) {
+  let options = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify({
+      [elementId]: newValue,
+    }),
+  };
+  fetch(descriptionApi + "/" + id, options)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function () {
+      let element = document.getElementById(elementId);
+      element.textContent = newValue;
+      input.parentNode.removeChild(input);
+      element.style.display = "block";
+    })
+
+    .catch((error) => {
+      console.error(error);
+    });
+}

@@ -11,6 +11,7 @@
     position: absolute;
     border-radius: 50px;
     border: 1px solid #9747FF;
+    z-index: 2;
 }
 .range-form #range{
     -webkit-appearance: none !important;
