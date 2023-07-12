@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/hompage/slider.css" />
     <link rel="stylesheet" href="css/contact/content.css" />
     <link rel="stylesheet" href="css/hompage/login-form.css" />
+    <link rel="stylesheet" href="css/hompage/register-form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -122,7 +123,7 @@
 
       <!-- from sign in to advice for dating -->
       <div class="title-page">
-        <h1>LIÊN HỆ</h1>
+        <h1>LIÊN HỆ VỚI CHÚNG TÔI</h1>
       </div>
       <div class="cards">
         <div class="item">
@@ -195,7 +196,10 @@
       <input type="text" id="username" />
       <label for="password">Mật khẩu</label>
       <input type="password" id="password" />
-      <a href="#">Quên mật khẩu</a>
+      <div class="option">
+        <a id="forget" href="#">Quên mật khẩu</a>
+        <a id="register" href="#">Chưa có tài khoản ?</a>
+      </div>
       <div class="button">
         <div class="login-btn" onclick="change_personal(event)">
           <span>Đăng nhập</span>
@@ -207,6 +211,23 @@
       <div class="other-login">
         <img src="css/hompage/img/google-logo.png" />
         <img src="css/hompage/img/facebook-logo.png" />
+      </div>
+      <div class="register-form" id="register-form" style="display: none;">
+        <span class="title">Đăng Ký</span>
+        <label for="username">Email hoặc số điện thoại</label>
+        <input type="text" id="username" />
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" />
+        <label for="confirm-password">Xác nhận</label>
+        <input type="password" id="confirm-password" />
+        <div class="button">
+          <div class="register-btn">
+            <span>Đăng ký</span>
+          </div>
+          <div class="cancel-btn" id="cancel-btn-register">
+            <span>Hủy</span>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/homepage/login-form.js"></script>

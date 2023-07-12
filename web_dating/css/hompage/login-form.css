@@ -1,6 +1,6 @@
 .login-form{
     display: none;
-    width: 900px;
+    width: 50%;
     height: 857px;
     padding: 54px 51px 0px 51px;
     flex-direction: column;
@@ -16,12 +16,13 @@
     filter: blur(0px);
     display: none;
     filter: blur(0rem);
-    transition: 0.2s linear;
+    transition: 0.2s ease-in-out;
+    overflow: hidden!important;
 }
 .login-form .title {
     color: rgba(237, 20, 125, 0.80);
     text-align: center;
-    font-size: 96px;
+    font-size: 64px;
     font-weight: 700;
 }
 .login-form label{
@@ -32,11 +33,11 @@
     flex-shrink: 0;
     align-self: stretch;
     color: rgba(0, 0, 0, 0.80);
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
 }
 .login-form input{
-    padding: 40px;
+    padding: 31px;
     height: 79px;
     flex-shrink: 0;
     align-self: stretch;
@@ -53,12 +54,12 @@
     justify-content: center;
     flex-shrink: 0;
     align-self: stretch;
-    color: #001AFF;
+    color: #001AFF !important;
     text-align: right;
-    font-size: 36px;
+    font-size: 24px;
 }
 .login-form a:hover{
-    color: #ED147D;
+    color: #ED147D !important;
 }
 .login-form .button{
     display: flex;
@@ -72,7 +73,6 @@
     display: flex;
     width: 322px;
     height: 74.5px;
-    flex-shrink: 0;
     border-radius: 20px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -84,9 +84,8 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
     width: 187px;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
 }
 .login-form .button .login-btn:hover, .login-form .button .cancel-btn:hover {
@@ -107,4 +106,14 @@
 .login-form .other-login img{
     width: 80px;
     height: 80px;
+}
+.option{
+    display: block;
+    width: 100%;
+}
+#register{
+    float: left;
+}
+#forget{
+    float: right;
 }

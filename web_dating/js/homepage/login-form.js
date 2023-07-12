@@ -21,3 +21,26 @@ function change_personal(event) {
   event.preventDefault();
   window.location.href = "personal.html";
 }
+
+var registerform = document.querySelector("#login-form #register-form");
+var registerbtn = document.querySelector("#register");
+var cancelbtn = document.querySelector("#login-form #register-form .button .cancel-btn");
+registerbtn.addEventListener("click", function () {
+  Object.assign(registerform.style,{
+    display: "flex",
+    filter: "blur(0px)",
+    width: "100%",
+    height: '857px',
+    top: "900px",
+  });
+  setTimeout(function () {
+    Object.assign(registerform.style,{
+      top: "0px",
+    }); 
+  },100)
+});
+cancelbtn.addEventListener("click",function(){
+  Object.assign(registerform.style,{
+    top: "900px",
+  });
+})
