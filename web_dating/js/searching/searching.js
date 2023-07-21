@@ -370,7 +370,7 @@ fetch(url)
           value.Hoobies.forEach(function (hobbie) {
             if (topics_checked.includes(hobbie)) counter++;
           });
-          if (counter == topics_checked.length) return true;
+          if (counter == topics_checked.length && counter !== 0) return true; else return false;
         });
         users_filtered = users_filtered.filter(function (value) {
           if (genders_checked.includes(value.gender)) return true;

@@ -1,5 +1,6 @@
 .register-form{
     width: 50%;
+    width: 50%;
     height: 800px;
     padding: 54px 51px 0px 51px;
     flex-direction: column;
@@ -9,12 +10,13 @@
     background: #FFF;
     box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25);
     position: fixed !important;
-    top: 40px;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%,-50%);
     filter: blur(1.5rem);
     display: none;
     transition: 0.2s ease-in-out;
+    z-index: 2;
 }
 .register-form .title {
     color: rgba(237, 20, 125, 0.80);
