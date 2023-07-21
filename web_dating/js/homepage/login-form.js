@@ -21,3 +21,9 @@ function change_personal(event) {
   event.preventDefault();
   window.location.href = "personal.html";
 }
+var register_form = document.querySelector(".login-form .register-form");
+var registerbtn = document.querySelector(".login-form .option #register");
+registerbtn.addEventListener("click",function(){
+  register_form.style = "display: flex; filter: blur(0px)";
+  
+})

@@ -36,3 +36,11 @@ html {
   font-weight: 700px;
   font-size: 60px;
 }
+.carousel{
+  width: 90%;
+  margin: auto;
+}
+.carousel-item img{
+  height: 500px;
+  object-fit: cover;
+}
