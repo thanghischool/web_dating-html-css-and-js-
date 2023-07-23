@@ -35,18 +35,21 @@
         <div class="logo">
           <img src="img/Logo.png" alt="logo" />
         </div>
-        <div class="menu">
-          <ul>
-            <li><a href="homepage.html" style="color: #ed147d!important">Trang chủ</a></li>
-            <li><a href="contact.html">Liên hệ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-          </ul>
+        <div class="responsive none">
+          <div class="menu">
+            <ul>
+              <li><a href="homepage.html">Trang chủ</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+            </ul>
+          </div>
+          <div class="menu2">
+            <li id="login-menu"><a href="#">Đăng nhập</a></li>
+          </div>
         </div>
-        <div class="menu2">
-          <li id="login-menu"><a href="#">Đăng nhập</a></li>
-        </div>
+        <div class="menu-btn">||||</div>
       </div>
-
+      <script src="js/homepage/menu-btn.js"></script>
       <div class="slider" style="padding-bottom: 29px">
         <div
           id="carouselExampleIndicators"
@@ -279,6 +282,23 @@
         <img src="css/hompage/img/facebook-logo.png" />
       </div>
       <div class="register-form" id="register-form" style="display: none;">
+        <span class="title">Đăng Ký</span>
+        <label for="username">Email hoặc số điện thoại</label>
+        <input type="text" id="username" />
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" />
+        <label for="confirm-password">Xác nhận</label>
+        <input type="password" id="confirm-password" />
+        <div class="button">
+          <div class="register-btn">
+            <span>Đăng ký</span>
+          </div>
+          <div class="cancel-btn" id="cancel-btn-register">
+            <span>Hủy</span>
+          </div>
+        </div>
+      </div>
+      <div class="register-form" id="register-form" style='display: none; bottom: -10px;'>
         <span class="title">Đăng Ký</span>
         <label for="username">Email hoặc số điện thoại</label>
         <input type="text" id="username" />

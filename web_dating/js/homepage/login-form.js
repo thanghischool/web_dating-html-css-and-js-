@@ -31,16 +31,16 @@ registerbtn.addEventListener("click", function () {
     filter: "blur(0px)",
     width: "100%",
     height: '857px',
-    top: "900px",
+    top: "200%",
   });
   setTimeout(function () {
     Object.assign(registerform.style,{
-      top: "0px",
+      top: "55%",
     }); 
   },100)
 });
 cancelbtn.addEventListener("click",function(){
   Object.assign(registerform.style,{
-    top: "900px",
+    top: "200%",
   });
 })

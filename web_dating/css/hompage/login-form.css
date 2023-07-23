@@ -1,8 +1,7 @@
 .login-form{
     display: none;
     width: 50%;
-    width: 50%;
-    height: 857px;
+    height: 780px;
     padding: 54px 51px 0px 51px;
     flex-direction: column;
     align-items: center;
@@ -14,8 +13,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    filter: blur(0px);
-    display: none;
     filter: blur(0rem);
     transition: 0.2s ease-in-out;
     overflow: hidden!important;
@@ -111,8 +108,8 @@
     align-self: stretch;
 }
 .login-form .other-login img{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 .option{
     display: block;
@@ -123,4 +120,19 @@
 }
 #forget{
     float: right;
+}
+@media screen and (max-width: 1024px){
+    .login-form{
+        width: 90%;
+        height: 90%;
+    }
+    .login-form input{
+        padding: 31px;
+        height: 40px;
+        font-size: 36px;
+    }
+    .login-form .title {
+        font-size: 48px;
+        font-weight: 700;
+    }
 }

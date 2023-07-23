@@ -1,6 +1,5 @@
 .register-form{
-    width: 50%;
-    width: 50%;
+    width: 60%;
     height: 800px;
     padding: 54px 51px 0px 51px;
     flex-direction: column;
@@ -80,4 +79,13 @@
 }
 .register-form .button .register-btn:active, .register-form .button .cancel-btn:active {
     background: #FF7EBD;
+}
+@media screen and (max-width: 1024px){
+    .register-form{
+        width: 90%;
+        height: 850px;
+    }
+    .register-form .button .register-btn,.register-form .button .cancel-btn{
+        width: 30% !important;
+    }
 }

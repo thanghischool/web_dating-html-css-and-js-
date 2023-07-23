@@ -9,7 +9,7 @@
   "description": [
     {
       "id": 1,
-      "name": "Phạm Thị Bích Thuỷ “Mình là người thích làm việc thiện, tốt tính và dễ chịu”",
+      "name": "Phạm Thị Bích Thuỷ “Mình là người thích làm việc thiện, tốt tính và dễ chịu và hiền lành” “Mình là người thích làm việc thiện, tốt tính và dễ chịu”",
       "character": "“Mình là người thích làm việc thiện, tốt tính và dễ chịu”",
       "Address": "Đà Nẵng",
       "Hoobies": "Đọc sách, Nghe nhạc, Xem phim",
@@ -41,7 +41,11 @@
       "character": "“Mình là người yêu cái đẹp, ghét sự giả dối”",
       "gender": "Nữ",
       "Address": "Đà Nẵng",
-      "Hoobies": ["Làm đẹp", "Nghệ thuật", "Thức ăn"],
+      "Hoobies": [
+        "Làm đẹp",
+        "Nghệ thuật",
+        "Thức ăn"
+      ],
       "Yearofbirth": 1999,
       "img_avatar": "https://hapotravel.com/wp-content/uploads/2023/03/chon-loc-25-avatar-gai-xinh-dep-nhu-than-tien-ty-ty_1.jpg",
       "age": 24
@@ -52,7 +56,11 @@
       "character": "“Mình là người yêu cái đẹp, ghét sự giả dối”",
       "gender": "Nữ",
       "Address": "Hà Nội",
-      "Hoobies": ["Làm đẹp", "Nghệ thuật", "Thức ăn"],
+      "Hoobies": [
+        "Làm đẹp",
+        "Nghệ thuật",
+        "Thức ăn"
+      ],
       "Yearofbirth": 2003,
       "img_avatar": "./img/hinh-anh-con-gai-cute-de-thuong-gaixinh24h-2.jpg",
       "age": 20
@@ -63,7 +71,11 @@
       "character": "“Mình là người hoạt đáo, nhanh nhẹn”",
       "gender": "Nữ",
       "Address": "Hồ Chí Minh",
-      "Hoobies": ["Sáng tạo", "Điện ảnh", "Âm nhạc"],
+      "Hoobies": [
+        "Sáng tạo",
+        "Điện ảnh",
+        "Âm nhạc"
+      ],
       "Yearofbirth": 1994,
       "img_avatar": "./img/Anh-gai-xinh-Viet-Nam.jpg",
       "age": 29
@@ -74,7 +86,11 @@
       "character": "“Mình là người miệt mài với công việc”",
       "gender": "Nữ",
       "Address": "Đà Nẵng",
-      "Hoobies": ["Sách", "Âm nhạc", "Điện ảnh"],
+      "Hoobies": [
+        "Sách",
+        "Âm nhạc",
+        "Điện ảnh"
+      ],
       "Yearofbirth": 2005,
       "img_avatar": "./img/hinh-anh-gai-xinh-de-thuong.jpg",
       "age": 18
@@ -85,7 +101,11 @@
       "character": "“Mình là người yêu nghệ thuật”",
       "gender": "Nữ",
       "Address": "Hà Nội",
-      "Hoobies": ["Nghệ thuật", "Tình cảm", "Làm đẹp"],
+      "Hoobies": [
+        "Nghệ thuật",
+        "Tình cảm",
+        "Làm đẹp"
+      ],
       "Yearofbirth": 1999,
       "img_avatar": "https://haycafe.vn/wp-content/uploads/2022/02/Anh-gai-xinh-de-thuong.jpg",
       "age": 24
@@ -96,7 +116,11 @@
       "character": "“Mình là người mạnh mẽ, thích mạo hiểm”",
       "gender": "Nam",
       "Address": "Đà Nẵng",
-      "Hoobies": ["Công việc", "Học tập", "Kinh nghiệm"],
+      "Hoobies": [
+        "Công việc",
+        "Học tập",
+        "Kinh nghiệm"
+      ],
       "Yearofbirth": 1998,
       "img_avatar": "https://bloghomestay.vn/wp-content/uploads/2023/01/99-anh-trai-dep-hai-mai-nam-tinh-cuon-hut-nhat-hien-nay_3.jpg",
       "age": 25
@@ -107,7 +131,11 @@
       "character": "“Tôi luôn kiên nhẫn và sẵn lòng đối mặt với thách thức.”",
       "gender": "Nam",
       "Address": "Hà Nội",
-      "Hoobies": ["Sách", "Âm nhạc", "Thể thao"],
+      "Hoobies": [
+        "Sách",
+        "Âm nhạc",
+        "Thể thao"
+      ],
       "Yearofbirth": 1995,
       "img_avatar": "https://2sao.vietnamnetjsc.vn/images/2022/11/18/15/46/trai-dep-do-xang-8.jpeg",
       "age": 28
@@ -118,7 +146,11 @@
       "character": "“Tôi luôn tìm cách vượt qua giới hạn của bản thân.”",
       "gender": "Nam",
       "Address": "Hồ Chí Minh",
-      "Hoobies": ["Công việc", "Sáng tạo", "Thể thao"],
+      "Hoobies": [
+        "Công việc",
+        "Sáng tạo",
+        "Thể thao"
+      ],
       "Yearofbirth": 1990,
       "img_avatar": "https://mof.com.vn/wp-content/uploads/anh-trai-dep-tuoi-16.jpeg",
       "age": 33
@@ -129,7 +161,11 @@
       "character": "“Tôi thích thử thách và không sợ đối mặt với khó khăn.”",
       "gender": "Nam",
       "Address": "Hải Phòng",
-      "Hoobies": ["Công nghệ", "Sáng tạo", "Trò chơi"],
+      "Hoobies": [
+        "Công nghệ",
+        "Sáng tạo",
+        "Trò chơi"
+      ],
       "Yearofbirth": 1993,
       "img_avatar": "https://haycafe.vn/wp-content/uploads/2022/02/Hinh-anh-trai-dep-dau-nam-Viet-Nam.jpg",
       "age": 30
@@ -140,7 +176,11 @@
       "character": "“Tôi là người quyết đoán và luôn tìm kiếm cơ hội để phát triển.”",
       "gender": "Nam",
       "Address": "Cần Thơ",
-      "Hoobies": ["Công nghệ", "Sáng tạo", "Học tập"],
+      "Hoobies": [
+        "Công nghệ",
+        "Sáng tạo",
+        "Học tập"
+      ],
       "Yearofbirth": 1997,
       "img_avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzyrkzPTNXJknVyLF1WBBb91CMCWeLnWa2Sw&usqp=CAU",
       "age": 26
@@ -151,7 +191,11 @@
       "character": "“Tôi là người quyết đoán và cầu toàn”",
       "gender": "LGBT",
       "Address": "Cần Thơ",
-      "Hoobies": ["Công nghệ", "Sáng tạo", "Học tập"],
+      "Hoobies": [
+        "Công nghệ",
+        "Sáng tạo",
+        "Học tập"
+      ],
       "Yearofbirth": 1996,
       "img_avatar": "https://c3nguyentatthanhhp.edu.vn/wp-content/uploads/2023/04/98-Hinh-Anh-Trai-Dep-Che-Mat-Nhin-Cool-Ngau.jpg",
       "age": 27
@@ -162,7 +206,11 @@
       "character": "“Tôi là người sáng tạo và luôn cầu toàn trong mọi việc.”",
       "gender": "LGBT",
       "Address": "Cần Thơ",
-      "Hoobies": ["Nghệ thuật", "Sáng tạo", "Học tập"],
+      "Hoobies": [
+        "Nghệ thuật",
+        "Sáng tạo",
+        "Học tập"
+      ],
       "Yearofbirth": 1997,
       "img_avatar": "https://static1.bestie.vn/Mlog/ImageContent/201810/say-nang-nu-dien-vien-tre-dao-dien-lgbt-phan-boi-nguoi-yeu-4-nam-f1d9a8.jpg",
       "age": 26
@@ -173,7 +221,11 @@
       "character": "“Tôi là người quyết đoán và luôn tìm kiếm giải pháp tốt nhất.”",
       "gender": "LGBT",
       "Address": "Hồ Chí Minh",
-      "Hoobies": ["Công nghệ", "Âm nhạc", "Thể thao"],
+      "Hoobies": [
+        "Công nghệ",
+        "Âm nhạc",
+        "Thể thao"
+      ],
       "Yearofbirth": 2000,
       "img_avatar": "https://hapotravel.com/wp-content/uploads/2023/04/chon-loc-25-hinh-anh-trai-dep-cute-tu-instagram_2.jpg",
       "age": 23
@@ -184,7 +236,11 @@
       "character": "“Tôi là người sáng tạo và không ngại thử nghiệm những ý tưởng mới.”",
       "gender": "LGBT",
       "Address": "Đà Nẵng",
-      "Hoobies": ["Công nghệ", "Sáng tạo", "Thức ăn"],
+      "Hoobies": [
+        "Công nghệ",
+        "Sáng tạo",
+        "Thức ăn"
+      ],
       "Yearofbirth": 1991,
       "img_avatar": "https://i.pinimg.com/originals/ab/f9/ca/abf9ca153dd18c5325278e732076f142.jpg",
       "age": 32
